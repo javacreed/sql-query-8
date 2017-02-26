@@ -1,12 +1,12 @@
 package com.javacreed.api.sql.query;
 
-public enum Operator implements ToSql {
+public enum BinaryOperator implements ToSql {
 
-  EQUALS("="), LESS_THAN("=");
+  EQUALS("="), LESS_THAN("<"), LESS_THAN_EQUALS("<="), GREATER_THAN(">"), GREATER_THAN_EQUALS(">=");
 
   private final String sign;
 
-  private Operator(final String sign) {
+  private BinaryOperator(final String sign) {
     this.sign = sign;
   }
 

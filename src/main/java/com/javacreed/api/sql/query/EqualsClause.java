@@ -19,6 +19,6 @@ public class EqualsClause extends BinaryOperatorClause {
   }
 
   public EqualsClause(final ToSql lhs, final ToSql rhs) {
-    super(lhs, Operator.EQUALS, rhs);
+    super(lhs, BinaryOperator.EQUALS, rhs);
   }
 }
