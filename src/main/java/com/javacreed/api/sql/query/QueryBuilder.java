@@ -49,6 +49,10 @@ public class QueryBuilder {
     return this;
   }
 
+  public QueryBuilder sql(final Number sql) {
+    return sql(sql.toString());
+  }
+
   public QueryBuilder sql(final String sql) {
     if (prefixNextWrite != null) {
       query.append(prefixNextWrite);

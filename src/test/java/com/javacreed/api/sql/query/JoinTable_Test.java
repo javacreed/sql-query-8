@@ -1,11 +1,7 @@
-package com.javacreed.api.obaf.sql.query;
+package com.javacreed.api.sql.query;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.javacreed.api.sql.query.JoinTable;
-import com.javacreed.api.sql.query.JoinType;
-import com.javacreed.api.sql.query.Query;
 
 public class JoinTable_Test {
 

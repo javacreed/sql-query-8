@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.javacreed.api.sql.query.OrderBy.Direction;
+
 public class Select implements ToSql {
 
   private boolean distinct = false;
@@ -19,6 +21,10 @@ public class Select implements ToSql {
   private final Where where = new Where();
 
   private final Map<String, Clause> labelledClauses = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+
+  private final OrderBy orderBy = new OrderBy();
+
+  private final Limit limit = new Limit();
 
   public Select all(final String alias) {
     return column(new Column(alias, "*"));
@@ -96,6 +102,36 @@ public class Select implements ToSql {
     return clause(clause);
   }
 
+  public Select limit(final long limit) {
+    this.limit.limit(limit);
+    return this;
+  }
+
+  public Select limit(final long limit, final long offset) {
+    this.limit.limit(limit, offset);
+    return this;
+  }
+
+  public Select offset(final long offset) {
+    this.limit.offset(offset);
+    return this;
+  }
+
+  public Select orderBy(final Column column, final Direction direction) {
+    orderBy.column(column, direction);
+    return this;
+  }
+
+  public Select orderBy(final String name, final Direction direction) {
+    orderBy.column(name, direction);
+    return this;
+  }
+
+  public Select orderBy(final String alias, final String name, final Direction direction) {
+    orderBy.column(alias, name, direction);
+    return this;
+  }
+
   @Override
   public QueryBuilder toSql(final QueryBuilder builder) {
     builder.sql("SELECT ");
@@ -115,15 +151,11 @@ public class Select implements ToSql {
       }
     }
 
-    // From Table
     builder.append(from);
-
-    // Joins
     builder.append(joins);
-
-    // Where
     builder.append(where);
-
+    builder.append(orderBy);
+    builder.append(limit);
     return builder;
   }
 }
