@@ -52,9 +52,25 @@ public class InClause implements Clause {
     return value(new ParameterSqlValue(parameter));
   }
 
+  public InClause parameters(final int parameter, final int... parameters) {
+    parameter(parameter);
+    for (final Object p : parameters) {
+      parameter(p);
+    }
+    return this;
+  }
+
   public InClause parameters(final Iterable<?> parameters) {
     for (final Object parameter : parameters) {
       parameter(parameter);
+    }
+    return this;
+  }
+
+  public InClause parameters(final long parameter, final long... parameters) {
+    parameter(parameter);
+    for (final Object p : parameters) {
+      parameter(p);
     }
     return this;
   }
