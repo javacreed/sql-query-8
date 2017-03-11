@@ -122,6 +122,11 @@ public class Select implements ToSql {
     return this;
   }
 
+  public Select orderBy(final String name) {
+    orderBy.column(name);
+    return this;
+  }
+
   public Select orderBy(final String name, final Direction direction) {
     orderBy.column(name, direction);
     return this;
