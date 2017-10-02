@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import com.javacreed.api.sql.query.OrderBy.Direction;
 
-public class Select_Test {
+public class SelectTest {
 
   @Test
   public void emptyInClause() {

@@ -5,7 +5,7 @@
 
 	<groupId>com.javacreed.api.sql</groupId>
 	<artifactId>sql-query-8</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>bundle</packaging>
 	<name>SQL Query Builder</name>
 

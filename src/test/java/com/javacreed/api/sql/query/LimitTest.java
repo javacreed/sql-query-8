@@ -3,7 +3,7 @@ package com.javacreed.api.sql.query;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Limit_Test {
+public class LimitTest {
 
   @Test
   public void test() {

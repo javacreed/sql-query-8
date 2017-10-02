@@ -3,7 +3,7 @@ package com.javacreed.api.sql.query;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Clauses_Test {
+public class ClausesTest {
 
   @Test
   public void emptyInClause() {

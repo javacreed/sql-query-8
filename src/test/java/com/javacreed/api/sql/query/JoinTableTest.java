@@ -3,7 +3,7 @@ package com.javacreed.api.sql.query;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class JoinTable_Test {
+public class JoinTableTest {
 
   @Test
   public void innerJoinOnOneColumn() {
